@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import Tk, Frame, Button, filedialog, messagebox
 from openpyxl import load_workbook
 
-
 root = Tk()
 
 class Application():
