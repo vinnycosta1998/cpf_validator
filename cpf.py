@@ -16,7 +16,7 @@ class CPF:
     def validate_cpf(self):
         self.cpf = list(self.cpf)
         if len(self.cpf) != 11:
-            return False
+            exit()
         try:
             for i in range(0, 11):
                 self.cpf[i] = int(self.cpf[i])
@@ -50,7 +50,15 @@ class CPF:
             self.second_digit_verificator = 0
         else:
             self.second_digit_verificator = 11 - split_for_eleven
-            
+        self.verify_cpf()
+
+    def verify_cpf(self):
+        self.last_two_digits_on_cpf = self.list_cpf[9:11]
+        if self.last_two_digits_on_cpf[0] == self.first_digit_verificator and self.last_two_digits_on_cpf[1] == self.second_digit_verificator:
+            return True
+        else:
+            return False
+
 teste = str(input("Digite um CPF"))
 
 cpf = CPF(cpf=teste)
