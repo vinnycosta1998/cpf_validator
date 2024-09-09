@@ -15,15 +15,12 @@ class CPF():
 
     def validate_cpf(self):
         self.cpf = self.cpf.replace(".", "").replace("-", "")
-        print("CPF sem caractheres", self.cpf)
         self.list_cpf = list(self.cpf)
-        print("TAMANHO CPF", len(self.cpf))
         if len(self.list_cpf) != 11:
             raise ValueError("O CPF deve ter 11 digítos")
         try:
             for i in range(0, 11):
                 self.list_cpf[i] = int(self.list_cpf[i])
-            print("CPF na lista", self.list_cpf)
         except ValueError:
             raise ValueError("CPF com caractheres inválido")
 

@@ -59,7 +59,7 @@ class Application():
                         self.cpfs.append(False)
 
     def insert_data_on_worksheet(self):
-        self.one_column_after_cpf_column_index = self.self.collumn_cpf + 1
+        self.one_column_after_cpf_column_index = self.self.collumn_cpf + 1 
         
 
 Application()
