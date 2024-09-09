@@ -54,6 +54,7 @@ class CPF():
 
     def verify_cpf(self):
         self.last_two_digits_on_cpf = self.list_cpf[9:11]
+
         return ( self.last_two_digits_on_cpf[0] == self.first_digit_verificator and self.last_two_digits_on_cpf[1] == self.second_digit_verificator)
         
 if __name__ == "__main__":

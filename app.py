@@ -9,6 +9,7 @@ class Application():
     def __init__(self):
         self.root = root
         self.cpfs = []
+
         self.screen()
         self.frames()
         self.buttons()
@@ -34,6 +35,7 @@ class Application():
             self.open_file()
         else:
             messagebox.showinfo("Nenhum arquivo selecionado", "Nenhum arquivo foi selecionado")
+            self.open_file()
     
     def buttons(self):
         self.button_open_file = Button(self.container, text="Selecione um arquivo Excel", command=self.select_file)
@@ -46,6 +48,7 @@ class Application():
         for row in self.wb_base.iter_rows(min_row=1, max_col=6, max_row=1, values_only=True):
             self.columns = row 
         self.column_cpf = self.columns.index("CPF")
+
         self.is_valid()
 
     def is_valid(self):
