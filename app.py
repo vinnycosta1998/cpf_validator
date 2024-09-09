@@ -50,7 +50,6 @@ class Application():
 
     def is_valid(self):
         for cell in self.wb_base.iter_cols(min_col=self.column_cpf + 1, max_col=self.column_cpf + 1, min_row=2, max_row=self.wb_base.max_row, values_only=True):
-            print(cell)
             for value in cell:
                  if value:
                     cpf_validator = CPF(str(value))
@@ -58,6 +57,10 @@ class Application():
                         self.cpfs.append(True)
                     else:
                         self.cpfs.append(False)
+
+    def insert_data_on_worksheet(self):
+        self.one_column_after_cpf_column_index = self.self.collumn_cpf + 1
+        
 
 Application()
     
